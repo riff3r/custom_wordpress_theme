@@ -18,3 +18,16 @@ function home_street_builders_theme_features() {
 }
 add_action('after_setup_theme', 'home_street_builders_theme_features');
 
+//Category
+function list_categories_shortcode() {
+    $categories = get_categories();
+
+    $output = '<div class="category_container">';
+    foreach ($categories as $category) {
+        $output .= '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">' . $category->name .  $category->count .' </a></li>';
+    }
+    $output .= '</ul>';
+
+    return $output;
+}
+add_shortcode('list_categories', 'list_categories_shortcode');

@@ -6,6 +6,7 @@ function home_street_builders_types() {
         'has_archive' => true,
         'public' => true,
         'show_in_rest' => true,
+        'taxonomies'            => array( 'category' ),
         'labels' => array(
             'name' => 'Events',
             'add_new_item' => 'Add New Event',
@@ -18,3 +19,4 @@ function home_street_builders_types() {
 }
 
 add_action('init', 'home_street_builders_types');
+

@@ -17,10 +17,13 @@
 
                 while ($eventPosts->have_posts()) {
                     $eventPosts->the_post(); ?>
+                    <?php
+                    $eventDate = new DateTime(get_field('event_date'));
+                    ?>
                     <div class="event-summary">
                         <a class="event-summary__date event-summary__date--beige t-center"
                            href="<?php the_permalink(); ?>">
-                            <span class="event-summary__month"><?php the_time('M'); ?></span>
+                            <span class="event-summary__month"><?php echo $eventDate->format('Y-m-d') ?></span>
                             <span class="event-summary__day"><?php the_time('d'); ?></span>
                         </a>
                         <div class="event-summary__content">

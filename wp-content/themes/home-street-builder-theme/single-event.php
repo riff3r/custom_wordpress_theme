@@ -1,34 +1,41 @@
+<?php get_header(); ?>
+
 <?php
+    $eventDate = new DateTime(get_field('event_date'));
+    $eventAddress = get_field('event_address');
+    $pageBannerImage = get_field('page_banner_background_image')['url'];
+    pageBanner(array('title' => 'Our Events', 'photo' => $pageBannerImage))
+?>
 
-get_header();
+    <div class="container mt-5">
 
-while (have_posts()) {
-    the_post(); ?>
-    <div class="page-banner">
-        <div class="page-banner__bg-image"
-             style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-        <div class="page-banner__content container container--narrow">
-            <h1 class="page-banner__title"><?php the_title(); ?></h1>
-            <div class="page-banner__intro">
-                <p>DONT FORGET TO REPLACE ME LATER</p>
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="fs-1 fw-bold">
+                    <?php the_title(); ?>
+                </h1>
+
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://unimassbd.com/asset/images/icons/calender.svg" alt="">
+                    <p class="m-0"><?php echo $eventDate->format('Y-m-d') ?></p>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <img src="https://unimassbd.com/asset/images/icons/Location.svg" alt="">
+                    <p class="m-0"><?php echo $eventAddress ?></p>
+                </div>
+
+                <hr class="w-25 mt-3"/>
+
+                <?php the_post_thumbnail(); ?>
+
+                <?php the_content(); ?>
+
+            </div>
+
+            <div class="col-lg-4">
+                <?php echo do_shortcode('[list_categories]'); ?>
             </div>
         </div>
     </div>
 
-    <div class="container container--narrow page-section">
-        <div class="metabox metabox--position-up metabox--with-home-link">
-            <p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('event'); ?>"><i
-                            class="fa fa-home" aria-hidden="true"></i> Events Home</a> <span
-                        class="metabox__main"><?php the_title(); ?></span></p>
-        </div>
-
-        <div class="generic-content"><?php the_content(); ?></div>
-
-    </div>
-
-
-<?php }
-
-get_footer();
-
-?>
+<?php get_footer(); ?>

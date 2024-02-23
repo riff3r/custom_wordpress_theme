@@ -17,7 +17,10 @@ get_header(); ?>
 
                 <?php
                 while (have_posts()) {
-                    the_post(); ?>
+                    the_post();
+                    $eventDate = new DateTime(get_field('event_date'));
+                    $eventAddress = get_field('event_address');
+                    ?>
                     <div class="all_p_card col-sm-12 col-lg-6 tour_event" id="">
                         <a href="<?php the_permalink(); ?>" class="">
                             <div class="card all_proj_card">
@@ -32,11 +35,11 @@ get_header(); ?>
 
                                     <div class="card_icon_img_cont">
                                         <img src="https://unimassbd.com/asset/images/icons/calender.svg" alt="">
-                                        2023-08-22
+                                        <?php echo $eventDate->format('Y-m-d') ?>
                                     </div>
                                     <div class="card_icon_img_cont">
                                         <img src="https://unimassbd.com/asset/images/icons/Location.svg" alt="">
-                                        BGB Banquet Hall , Shimanto sombhar 4th Floor, Road#2, Dhaka 1205
+                                        <?php echo $eventAddress ?>
                                     </div>
                                 </div>
                             </div>
@@ -48,79 +51,6 @@ get_header(); ?>
                 echo paginate_links();
                 ?>
 
-                <div class="all_p_card col-sm-12 col-lg-6 _evnt" id="">
-                    <a href="https://unimassbd.com/events/view/23" class="">
-                        <div class="card all_proj_card">
-                            <div class="proj_img_container">
-                                <img src="https://unimassbd.com/uploads/images/events/1692848413_3621_viber_image_2023-08-23_20-04-28-905.jpg"
-                                     class="card-img-top card_img all_p_iamge" alt="...">
-                            </div>
-                            <div class="card-body all_p_crd_bdy">
-                                <h5 class="card-title f_p_card_title">
-                                    Castle La Paz &amp; La B
-                                </h5>
-
-                                <div class="card_icon_img_cont">
-                                    <img src="https://unimassbd.com/asset/images/icons/calender.svg" alt="">
-                                    2023-08-22
-                                </div>
-                                <div class="card_icon_img_cont">
-                                    <img src="https://unimassbd.com/asset/images/icons/Location.svg" alt="">
-                                    BGB Banquet Hall , Shimanto sombhar 4th Floor, Road#2, Dhaka 1205
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="all_p_card col-sm-12 col-lg-6 tour_evnt" id="" style="display: block;">
-                    <a href="https://unimassbd.com/events/view/21" class="">
-                        <div class="card all_proj_card">
-                            <div class="proj_img_container">
-                                <img src="https://unimassbd.com/uploads/images/events/1690007797_418_6.jpg"
-                                     class="card-img-top card_img all_p_iamge" alt="...">
-                            </div>
-                            <div class="card-body all_p_crd_bdy">
-                                <h5 class="card-title f_p_card_title">
-                                    Management training
-                                </h5>
-
-                                <div class="card_icon_img_cont">
-                                    <img src="https://unimassbd.com/asset/images/icons/calender.svg" alt="">
-                                    2023-05-12
-                                </div>
-                                <div class="card_icon_img_cont">
-                                    <img src="https://unimassbd.com/asset/images/icons/Location.svg" alt="">
-                                    Unimass Holdings limited, Coporate Office
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="all_p_card col-sm-12 col-lg-6 tour_evnt" id="" style="display: block;">
-                    <a href="https://unimassbd.com/events/view/21" class="">
-                        <div class="card all_proj_card">
-                            <div class="proj_img_container">
-                                <img src="https://unimassbd.com/uploads/images/events/1690007797_418_6.jpg"
-                                     class="card-img-top card_img all_p_iamge" alt="...">
-                            </div>
-                            <div class="card-body all_p_crd_bdy">
-                                <h5 class="card-title f_p_card_title">
-                                    Management training
-                                </h5>
-
-                                <div class="card_icon_img_cont">
-                                    <img src="https://unimassbd.com/asset/images/icons/calender.svg" alt="">
-                                    2023-05-12
-                                </div>
-                                <div class="card_icon_img_cont">
-                                    <img src="https://unimassbd.com/asset/images/icons/Location.svg" alt="">
-                                    Unimass Holdings limited, Coporate Office
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
 

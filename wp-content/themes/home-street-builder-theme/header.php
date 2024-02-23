@@ -31,7 +31,7 @@
                 </li>
 
                 <li class="nav-item" >
-                    <a class="nav-link <?php if (get_post_type() == 'event' or wp_get_post_parent_id(0) == 16) echo 'active' ?>" href="<?php echo site_url('/events'); ?>">Event & News</a>
+                    <a class="nav-link <?php if (get_post_type() == 'event') echo 'active' ?>" href="<?php echo get_post_type_archive_link('event'); ?>">Event & News</a>
                 </li>
 
                 <li class="nav-item">

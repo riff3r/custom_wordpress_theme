@@ -7,6 +7,8 @@ function pageBanner($args = NULL)
         $args['title'] = get_the_title();
     }
 
+    $args['subtitle'] = isset($args['subtitle']) ? $args['subtitle'] : "";
+
     if (!$args['photo']) {
         if (get_field('page_banner_background_image') AND !is_archive() AND !is_home() ) {
             $args['photo'] = get_field('page_banner_background_image');
@@ -15,13 +17,20 @@ function pageBanner($args = NULL)
         }
     }
 
+
     ?>
     <div class="page-cover-photo"
          style="background-image: url(<?php echo $args['photo'] ?>)">
         <div class="overlay_shadow"></div>
-        <h1 class="page-title ">
-            <?php echo $args['title'] ?>
-        </h1>
+        <div class="page-title text-center">
+            <h1><?php echo $args['title'] ?></h1>
+            <?php if (isset($args['subtitle'])) : ?>
+                <h5 class="text-white"><?php echo $args['subtitle']; ?></h5>
+            <?php endif; ?>
+        </div>
+
+
+
     </div>
 <?php
 }
@@ -32,6 +41,7 @@ function home_street_builders_files() {
     wp_enqueue_script('main-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
 
     wp_enqueue_style( 'roboto-font', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,400&display=swap' );
+    wp_enqueue_style( 'open-sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap' );
     wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' );
     wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' );
     wp_enqueue_style('home_builder_main_styles', get_stylesheet_uri());

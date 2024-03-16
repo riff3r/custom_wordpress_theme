@@ -86,6 +86,9 @@ function home_street_builder_adjust_queries($query) {
 //            )
 //        ));
     }
+
+
 }
 
 add_action('pre_get_posts', 'home_street_builder_adjust_queries');
+

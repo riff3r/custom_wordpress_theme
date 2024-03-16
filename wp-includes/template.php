@@ -449,7 +449,7 @@ function get_privacy_policy_template() {
  * An example of this is:
  *
  * 1. page-templates/full-width.php
- * 2. page-about.php
+ * 2. page-about-us.php
  * 3. page-4.php
  * 4. page.php
  *

@@ -1,69 +1,84 @@
 <?php get_header(); ?>
 
     <div class="container">
+        <!--    Slider    -->
+
+        <!-- About Section -->
         <div class="row">
-            <div class="col">
-                <h1>Upcoming event</h1>
+            <div class="about_home_container">
+                <div class="h_title mb-md-5 mb-sm-4 mb-4 text-center">
+                    <div class="_title">Welcome to Home Street Builders Limited</div>
+                    <div class="_title_line"></div>
+                </div>
 
-                <?php
+                <div class="row overflow-hidden hm_abt_sec_dt">
+                    <div class="col-12 col-lg-6 col-md-12 col-sm-12 ">
+                        <div class="combo_image_container _mr-5">
+                            <img src="https://unimassbd.com/asset/images/image 27.png" alt=""
+                                 class="img-fluid home_abt_image">
 
-                $args = array(
-                    'post_type' => 'event',
-                    'post_status' => 'publish',
-                    'posts_per_page' => 8,
-                    'order' => 'ASC',
-                );
-                $eventPosts = new WP_Query($args);
 
-                while ($eventPosts->have_posts()) {
-                    $eventPosts->the_post(); ?>
-                    <?php
-                    $eventDate = new DateTime(get_field('event_date'));
-                    ?>
-                    <div class="event-summary">
-                        <a class="event-summary__date event-summary__date--beige t-center"
-                           href="<?php the_permalink(); ?>">
-                            <span class="event-summary__month"><?php echo $eventDate->format('Y-m-d') ?></span>
-                            <span class="event-summary__day"><?php the_time('d'); ?></span>
-                        </a>
-                        <div class="event-summary__content">
-                            <h5 class="event-summary__title headline headline--tiny"><a
-                                        href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                            <p><?php echo wp_trim_words(get_the_content(), 18); ?> <a href="<?php the_permalink(); ?>"
-                                                                                      class="nu gray">Read more</a></p>
                         </div>
                     </div>
-                <?php }
-                wp_reset_postdata();
-                ?>
-            </div>
-            <div class="col">
-                <h1>From Our blog post</h1>
+                    <div class="col-12 col-lg-6 col-md-12 col-sm-12 home_about_sec_cont_lg">
 
-                <?php
-                $homepagePosts = new WP_Query(array('posts_per_page' => 2));
+                        <div class="ml-5">
+                            <div class="paragraph_description about_desc mb-5" id="about_desc">
+                                <div class="abt_lg">
+                                    <p>
+                                        Since its inception in 2010, Unimass Holdings Ltd. creates greater value of
+                                        living
+                                        for its Clients,
+                                        Landowners and Stakeholders. Unimass Holdings Ltd. has made it a success story
+                                        by
+                                        establishing long term mutually
+                                        beneficial relationship with its valued Clients, Prospects, Landowners, Patrons
+                                        and
+                                        Business Associates through quality,
+                                        commitment and professionalism. With a team of experienced Management Members,
+                                        Engineers and Consultants,
+                                        Unimass Holdings Ltd. always gives top priority to the structural aspect of
+                                        building
+                                        construction,
+                                        which ought to be the primary concern because a fanciful façade ca...
+                                    </p>
+                                </div>
+                            </div>
 
-                while ($homepagePosts->have_posts()) {
-                    $homepagePosts->the_post(); ?>
-                    <div class="event-summary">
-                        <a class="event-summary__date event-summary__date--beige t-center"
-                           href="<?php the_permalink(); ?>">
-                            <span class="event-summary__month"><?php the_time('M'); ?></span>
-                            <span class="event-summary__day"><?php the_time('d'); ?></span>
-                        </a>
-                        <div class="event-summary__content">
-                            <h5 class="event-summary__title headline headline--tiny"><a
-                                        href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                            <p><?php echo wp_trim_words(get_the_content(), 18); ?> <a href="<?php the_permalink(); ?>"
-                                                                                      class="nu gray">Read more</a></p>
+
+                            <a type="button" class="abt_btn_cont" href="https://unimassbd.com/about">
+                                <button type="button" class="btn btn-primary home_abt_btn"
+                                        style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: 1.8rem; --bs-btn-font-size: 1rem;">
+                                    Know more
+                                </button>
+                            </a>
                         </div>
                     </div>
-                <?php }
-                wp_reset_postdata();
-                ?>
-
+                </div>
             </div>
         </div>
+
+        <!-- Featured Project       -->
+        <div class="row">
+            <div class="project_home_container">
+                <div class="h_title mb-md-5 mb-sm-4 mb-4 text-center">
+                    <div class="_title">Our Featured Projects</div>
+                    <div class="_title_line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section   -->
+
+        <div class="row">
+            <div class="project_home_container">
+                <div class="h_title mb-md-5 mb-sm-4 mb-4 text-center">
+                    <div class="_title">Our Projects</div>
+                    <div class="_title_line"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 <?php get_footer(); ?>

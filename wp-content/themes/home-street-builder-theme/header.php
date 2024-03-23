@@ -55,8 +55,14 @@
     <div class="container-fluid px-4 navbar_width d-flex align-item-cente">
         <div class="navbar_logo">
             <a class="navbar-brand " href="<?php echo site_url(); ?>">
+<!--                <img-->
+<!--                        src="https://unimassbd.com/asset/images/Unimass-Logo-300x204.png"-->
+<!--                        width="123"-->
+<!--                        height="83"-->
+<!--                />                -->
+
                 <img
-                        src="https://unimassbd.com/asset/images/Unimass-Logo-300x204.png"
+                        src="http://home-street-builder.local/wp-content/uploads/2024/03/HSBL-1.png"
                         width="123"
                         height="83"
                 />

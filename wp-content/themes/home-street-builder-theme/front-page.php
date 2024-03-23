@@ -1,7 +1,70 @@
 <?php get_header(); ?>
+    <!--    Slider    -->
+    <div class="CSSgal">
+        <!-- Don't wrap targets in parent -->
+        <s id="s1"></s>
+        <s id="s2"></s>
+        <s id="s3"></s>
+        <s id="s4"></s>
+
+        <div class="slider">
+            <div class="slider-item">
+                <div class="slider-text">
+                    <div class="slider-title">Ayesha Nurul Lake Serenity</div>
+                    <div class="slider-subtitle">Gulshan Lake drive road</div>
+                </div>
+                <img
+                        class="slid-image"
+                        src="https://unimassbd.com/uploads/images/project/1687769671_1387_web cover.jpg"
+                        alt=""
+                />
+            </div>
+            <div class="slider-item">
+                <div class="slider-text">
+                    <div class="slider-title">South Serenade</div>
+                    <div class="slider-subtitle">Bashundhara, block-J</div>
+                </div>
+                <img
+                        class="slid-image"
+                        src="https://unimassbd.com/uploads/images/project/1687770591_4654_web cover-01-01.jpg"
+                        alt=""
+                />
+            </div>
+            <div class="slider-item">
+                <div class="slider-text">
+                    <div class="slider-title">Siraj Dreamsville</div>
+                    <div class="slider-subtitle">Sher E Bangla Road</div>
+                </div>
+                <img
+                        class="slid-image"
+                        src="https://unimassbd.com/uploads/images/project/1687770642_3023_Web cover-01.jpg"
+                        alt=""
+                />
+            </div>
+            <div class="slider-item">
+                <div class="slider-text">
+                    <div class="slider-title">Casa Lucido Di Bashar</div>
+                    <div class="slider-subtitle">Pallabi R/A</div>
+                </div>
+                <img
+                        class="slid-image"
+                        src="https://unimassbd.com/uploads/images/project/1687771082_6992_web banner-01-01.jpg"
+                        alt=""
+                />
+            </div>
+        </div>
+
+        <div class="bullets-container">
+            <div class="bullets bullets-custom">
+                <a class="bullet_anchor" href="#s1">01</a>
+                <a class="bullet_anchor" href="#s2">02</a>
+                <a class="bullet_anchor" href="#s3">03</a>
+                <a class="bullet_anchor" href="#s4">04</a>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
-        <!--    Slider    -->
 
         <!-- About Section -->
         <div class="row">
@@ -59,82 +122,100 @@
         </div>
 
         <!-- Featured Project       -->
-        <div class="row">
-            <div class="featured_home_container">
-                <div class="h_title mb-md-5 mb-sm-4 mb-4 text-center">
-                    <div class="_title">Our Featured Projects</div>
-                    <div class="_title_line"></div>
-                </div>
-            </div>
 
-            <div>
-                <div class="pt-0 position-relative card_width">
-                    <img
-                            class="image__hover img-fluid"
-                            height="384"
-                            src="https://images.unsplash.com/photo-1706026803368-d84389566a80?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt=""
-                    />
+        <?php
+        // Check if there are any featured projects
+        $featured_projects_args = array('post_type' => 'project', // Assuming "project" is your custom post type name
+            'meta_key' => 'is_featured', 'meta_value' => true, // Only get projects where is_featured is true
+            'posts_per_page' => -1, // Get all featured projects
+        );
 
-                    <div class="blur_text">
-                        <h3 class="text-center">Hello City </h3>
-                        <hr/>
-                        <div class="d-flex gap-2 blur_text_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                 class="bi bi-check2" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
-                            </svg>
+        $featured_projects_query = new WP_Query($featured_projects_args);
 
-                            <p class="text-white mb-1">Land Area: This is a features This is a features </p>
-                        </div>
-                        <div class="d-flex gap-1 blur_text_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                 class="bi bi-check2" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
-                            </svg>
-                            <p class="text-white mb-1">Facing: This is a features</p>
-                        </div>
-                        <div class="d-flex gap-1 blur_text_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                 class="bi bi-check2" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
-                            </svg>
-                            <p class="text-white mb-1">Storied: This is a features</p>
-                        </div>
-                        <div class="d-flex gap-1 blur_text_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                 class="bi bi-check2" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
-                            </svg>
-                            <p class="text-white mb-1">Number of Apartments: This is a features</p>
-                        </div>
-                        <div class="d-flex gap-1 blur_text_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                 class="bi bi-check2" viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
-                            </svg>
-                            <p class="text-white mb-1">Size of unit: This is a features</p>
-                        </div>
-                    </div>
 
-                    <div class="p-3 cursor-pointer">
-                        <p class="card_title">Lorem Ipsum</p>
-                        <div class="d-flex gap-2 align-item-center card_subtitle_height">
-                            <img height="20" width="20" src="https://unimassbd.com/asset/images/icons/Location.svg"
-                                 alt="">
-                            <p class="">lorem ipsum lorem ipsum lorem ipsum</p>
-                        </div>
-                        <div class="d-flex gap-2 align-item-center card_subtitle_height">
-                            <img height="20" width="20" src="https://unimassbd.com/asset/images/icons/measurement.svg"
-                                 alt="">
-                            <p>2072 & 1853 Sft. Sq. Ft. </p>
-                        </div>
+        if ($featured_projects_query->have_posts()) : ?>
+            <div class="row">
+                <div class="featured_home_container">
+                    <div class="h_title mb-md-5 mb-sm-4 mb-4 text-center">
+                        <div class="_title">Our Featured Projects</div>
+                        <div class="_title_line"></div>
                     </div>
                 </div>
+
+                <div>
+                    <?php while ($featured_projects_query->have_posts()) : $featured_projects_query->the_post(); ?>
+
+                    <div class="pt-0 position-relative card_width">
+                        <?php
+                        // Get featured image
+                        $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                        if ($featured_image_url) :
+                            ?>
+                            <img class="image__hover img-fluid" height="384" src="<?php echo $featured_image_url; ?>" alt="<?php the_title(); ?>">
+                        <?php endif; ?>
+
+
+                        <div class="blur_text">
+                            <h3 class="text-center"><?php the_title(); ?></h3>
+                            <hr/>
+                            <div class="d-flex gap-2 blur_text_div">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                     class="bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
+                                </svg>
+
+                                <p class="text-white mb-1">Land Area: This is a features This is a features </p>
+                            </div>
+                            <div class="d-flex gap-1 blur_text_div">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                     class="bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
+                                </svg>
+                                <p class="text-white mb-1">Facing: This is a features</p>
+                            </div>
+                            <div class="d-flex gap-1 blur_text_div">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                     class="bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
+                                </svg>
+                                <p class="text-white mb-1">Storied: This is a features</p>
+                            </div>
+                            <div class="d-flex gap-1 blur_text_div">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                     class="bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
+                                </svg>
+                                <p class="text-white mb-1">Number of Apartments: This is a features</p>
+                            </div>
+                            <div class="d-flex gap-1 blur_text_div">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                     class="bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
+                                </svg>
+                                <p class="text-white mb-1">Size of unit: This is a features</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3 cursor-pointer">
+                            <p class="card_title">Lorem Ipsum</p>
+                            <div class="d-flex gap-2 align-item-center card_subtitle_height">
+                                <img height="20" width="20" src="https://unimassbd.com/asset/images/icons/Location.svg"
+                                     alt="">
+                                <p class="">lorem ipsum lorem ipsum lorem ipsum</p>
+                            </div>
+                            <div class="d-flex gap-2 align-item-center card_subtitle_height">
+                                <img height="20" width="20"
+                                     src="https://unimassbd.com/asset/images/icons/measurement.svg"
+                                     alt="">
+                                <p>2072 & 1853 Sft. Sq. Ft. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+                </div>
+
             </div>
-
-        </div>
-
+            <?php wp_reset_postdata(); endif; ?>
         <!-- Projects Section   -->
 
         <div class="row">

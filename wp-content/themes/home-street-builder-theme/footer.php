@@ -6,9 +6,15 @@
                 <div class="col-lg-3 col-md-12 col-sm-12 all_footer_start ">
                     <div class="row">
                         <div class="footer_brand_img mt-3 mb-4">
-                            <img height="85" width="auto"
-                                 src="https://unimassbd.com/asset/images/Unimass-Logo-300x204.png" alt="..."
-                                 class="footer_area_main_logo  ">
+<!--                            <img height="85" width="auto"-->
+<!--                                 src="https://unimassbd.com/asset/images/Unimass-Logo-300x204.png" alt="..."-->
+<!--                                 class="footer_area_main_logo  ">-->
+                            <img
+                                    src="http://home-street-builder.local/wp-content/uploads/2024/03/HSBL-1.png"
+                                    width="123"
+                                    height="83"
+                                    alt="Home street logo"
+                            />
                         </div>
                     </div>
 
